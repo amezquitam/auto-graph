@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Auto-Graph - Simulator</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/leader-line.min.js"></script>
+    <script src="js/plain-draggable.min.js"></script>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+    <div id="wrapper">
+        <div id="screen">
+            <div id="input">
+                <label for="entry-auto">Input string</label>
+                <input type="text" name="entry" id="entry-auto">
+                <label for="entry-auto">Simulation speed: <span id="velocity-out"></span></label>
+                <input type="range" name="velocity" min="1" max="10" id="velocity-auto">
+            </div>
+            <div id="nodes">
+                <div class="gnode" data-state="p"></div>
+                <div class="gnode" data-state="q"></div>
+                <div class="gnode" data-state="r"></div>
+            </div>
+            <div id="transitions">
+                <!-- P transitions -->
+                <div class="gedge" data-state="p" data-entry="b" data-top="b" data-push="b"></div>
+                <div class="gedge" data-state="p" data-entry="a" data-top="b" data-push="a"></div>
+                <div class="gedge" data-state="p" data-entry="b" data-top="a" data-push="b"></div>
+                <div class="gedge" data-state="p" data-entry="a" data-top="a" data-push="a"></div>
+                <div class="gedge" data-state="p" data-entry="b" data-top="#" data-push="b"></div>
+                <div class="gedge" data-state="p" data-entry="a" data-top="#" data-push="a"></div>
+                <div class="gedge" data-state="p" data-entry="b" data-top="b" data-pop data-go="q"></div>
+                <div class="gedge" data-state="p" data-entry="a" data-top="a" data-pop data-go="q"></div>
+                <!-- Q transitions -->
+                <div class="gedge" data-state="q" data-entry="b" data-top="b" data-pop></div>
+                <div class="gedge" data-state="q" data-entry="a" data-top="a" data-pop></div>
+                <div class="gedge" data-state="q" data-entry="" data-top="#" data-go="r"></div>
+                <!-- R transitions -->
+            </div>
+            <div id="edges">
+            </div>
+            <div id="stack">
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>
